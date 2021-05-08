@@ -1,0 +1,151 @@
+---
+layout: post
+title: A noobs guide to binary exploitation
+categories: Pwn
+---
+
+Date: 2021-01-05
+"Help, I don't know what I don't know"
+
+## Introduction
+
+As much as I'd like to make the ultimate guide to binary exploitation, there are people that have done much better than I can hope to achieve. However, one thing I struggled with was finding those resources. More than I realized, even. When I was starting out with CTFs, I did most of the PicoCTF binary exploitation challenges and thought I could do it all. Then I did a proper CTF and got a grand total of 0 points. The amazing fellow players pointed my nose in the right direction, and I'd like to do that for you as well.
+
+Though it might be written like one, this is not a chronological guide. There are too many (amazing) resources out there that all overlap, making it near impossible. So feel free to go on a tangent with a course you like, and come back whenever you feel like it.
+
+You can find a list with well-known CTFs and wargames at the bottom of this page.
+
+## Baby steps
+
+Most of the binary exploitation challenges you'll encounter at first are written in C. You'd do well getting a grasp at that first. If you don't (fully) understand pointers yet, that should be a priority. An understanding of function pointers will also greatly help in understanding pwn challenges.
+
+An understanding of the stack is even more critical. Understand the difference between Von Neumann and Harvard architectures. You can find a diagram of the stack in the pwn/rev cheat sheet on this blog.
+
+Besides being the superior OS family (I use Arch btw), it is very useful to know your way around Linux. If you need a quick refresher on common Linux syntax, [OTW Bandit](https://overthewire.org/wargames/bandit/) is an excellent resource.
+
+In many CTFs you will find both the source code and the binary. I still recommend dipping your feet into x86 and x86_64 assembly because this gives insight in how functions are called, and how data is passed around.
+
+## ASLR
+
+We haven't even started, and we already have a frenemy. Address Space Layout Randomization (ASLR) was made to stop us from doing what we're about to do. If a system has ASLR enabled, [it will be difficult to impossible](https://www.ret2rop.com/2018/08/can-we-bruteforce-aslr.html) to jump to a specific place in the code. When starting out, we'll want to turn it off. Wargames like PicoCTF and OverTheWire have already done that for us.
+
+If you want to test locally without ASLR, you can write a 0 to `/proc/sys/kernel/randomize_va_space` to disable it. Note that this is per OS. Applying this in a VM will not affect the host machine. Applying this on the host machine __will__ affect all (Docker) containers running on it.
+
+## PIE/PIC
+
+"Oh no not another security measure." Yes, another security measure. We have plenty more where this came from. Position-independent executable or code, (PIE/PIC) is similar to ASLR in that it makes predicting memory locations harder. But the way it achieves it is very different. PIE is tied to the architecture. So while ASLR is system-wide, PIE is defined per binary. The core of what PIE does, is store bits (haha) of the binary with an offset, instead of with fixed addresses. [Non-PIE binaries do not benefit from ASLR](https://securityetalii.es/2013/02/03/how-effective-is-aslr-on-linux-systems/).
+
+## Starting with x86 BOF
+
+To understand buffer overflow exploits, you should first understand buffers; how they are stored on the stack; and how C handles strings for example. With those concepts, you will understand how a buffer overflow will write to parts of memory where it shouldn't.
+
+You will understand that this overflow might cause some local variables to be overwritten. (Including a stack canary. More on that later.)
+
+It can also overwrite the previous instruction pointer, and this can be used to jump to any location in memory of your choosing. (Which may be less useful than you thought. More on NX and R^W later)
+
+You can find information on all this in the usual places (StackOverflow, Wikipedia, or search on DuckDuckGo). Look the difference between gets() and fgets() (<https://linux.die.net/man/3/gets>). LiveOverflow explains it very well in <https://www.youtube.com/watch?v=T03idxny9jE> and <https://www.youtube.com/watch?v=8QzOC8HfOqU>
+
+Test your knowledge with one or more of the following:
+
+- <https://2019game.picoctf.com/> OverFlow 0, 1 and 2;
+- <https://ropemporium.com/challenge/ret2win.html>;
+- <https://pwnable.kr/play.php> Toddler's bottle - bof
+
+Try doing it by hand before moving on to tools that automate the job for you. When you're doing more CTFs, it will be helpful to automate things. But you should understand, and be able to manually do buffer overflow exploits first.
+
+## Shellcode and DEP, NX, R^X
+
+At this point, you might also be interested in writing shellcode. A skill you should have is using other peoples shellcode. [Shell-storm](http://shell-storm.org/shellcode/) is an excellent resource for prewritten shellcode.
+
+PicoCTF 2019 has good shellcode challenges. LiveOverflow has a good explanation once again: <https://www.youtube.com/watch?v=HSlhY4Uy8SA>. Be careful here. NX might make your life difficult.
+
+With the exception of challenges that are specifically made for shellcode, you won't be able to simply write your code into the stack and run it. The concept of Read XOR Execute (R^X) tells us any part of memory should only ever be readable, or executable, but not both. A binary might have the NX security feature enabled. This means that the stack will not be executable. Your precious shellcode on the stack is now useless.
+
+## Ropping
+
+Now that you can call one function, you can call many. (You know more than you think!) The trick is to keep going after you've made one call. Do [This ROP Emporium challenge](https://ropemporium.com/challenge/callme.html) to learn all about that. It should set you right up for the more complicated ropping with x86_64.
+
+Now that you understand why buffer overflows work, and how ropping works, you can start to automate it. Maybe brush up on your Python (3!!) a bit, and try doing all the BOF challenges you've done up until now, with Pwntools. You already know the lengths of the padding you need so just let Pwntools do the address crafting instead of manually & with struct.pack().
+
+## Moving on to x86_64
+
+With callme challenges, the core concept stays the same when moving from x86 to x86_64. The main thing to watch out for is the size of EBP and EIP.
+
+Test your knowledge in <https://2019game.picoctf.com/> for example, in the challenge NewOverFlow 1.
+
+To do more than the simplest callme, you will have to understand how x86_64 handles arguments. Where they used to be stored on the stack, they're now moved to registers. Always in the order or RSI, RDI, RSI, RDX, R8, R9. This is just something that is, and you'll learn it by heart if you use it enough. If you have more arguments than this, they will be stored onto the stack.
+
+The first few arguments cannot be directly changed with a buffer overflow. For that, we will need gadgets.
+
+Test your knowledge in <https://2019game.picoctf.com/> for example, in the challenge NewOverFlow 2. Or with the 64 bits version of [ROP Emporiums callme](https://ropemporium.com/challenge/callme.html).
+
+One thing you will likely trip over is the MOVAPS issue. Remember that for the next time you've made an exploit, you're debugging it and everything seems to work but then it inexplicably fails. [ROPEmporium explains it well](https://ropemporium.com/guide.html).
+
+## Libc, PLT, GOT
+
+This is the part that I struggled with most, because I didn't know it was a thing. But it's also the part that will get you the furthest in CTFs once you do understand it.
+
+[This video is a good primer](https://www.youtube.com/watch?v=kUk5pw4w0h4). Note the part about ASLR. That is exploited in [this video](https://youtu.be/6S4A2nhHdWg) by IppSec. Do feel free to reference it when trying to exploit your own first ret2libc. If you prefer written form instead of videos, follow [this article](https://made0x78.com/bseries-ret2libc/)
+
+## Canaries
+
+"With ROP, nothing can stop us. Not even NX!" Hold your horses, dear friend. Let me introduce you to stack canaries. Just like the original canaries down in the mines, stack canaries warn when something goes horribly wrong. But this time it's not problems with air, but problems with the stack. At compile time, the compiler will place a variable right after a buffer, or at least right before the EBP. Before exiting the function, the code will compare that variable to a value stored in a register. If it does not match, it will tell you `*** stack smashing detected ***` and exit out. There is usually very little you can do about this. Maybe try a format string exploit instead.
+
+## Format string
+
+A format string exploit is the less well-known cousin of the buffer overflow exploit. But it can be just as fatal. [LiveOverflow explains it very well](https://www.youtube.com/watch?v=0WvrSfcdq1I). It's still a lot to take in though, so don't worry if you need to go through it a couple of times.
+
+The TL;DR of Format string exploits is as follows. If you control the first argument to printf(), you can leak information with `%x`, or you can write to arbitrary locations in memory with `%n`.
+
+## RELRO
+
+Relocation read-only (RELRO) is a security measure pertaining to the Global Offset Table. I've not come across this feature in the more basic, beginner friendly CTFs. But it is something to watch out for if you suspect that the solution to a challenge is related to maliciously writing a value into the GOT.
+
+## Heap
+
+If you've come this far, you understand the stack very well, so you probably also understand the heap. To learn more about exploiting the heap, you can turn to [LiveOverflow](https://www.youtube.com/watch?v=TfJrU95q1J4).
+
+## Seccomp
+
+The first time I encountered a binary with seccomp, I had never heard of it yet. I had crafted the perfect exploit, but right at the syscall, it would crash. I tried many different pieces of shellcode, they all ran perfectly until the syscall was made to retrieve the flag. It turned out that [those syscalls were explicitly disallowed](https://en.wikipedia.org/wiki/Seccomp).
+
+If you want to play around with seccomp and writing shellcode, try [Toddler's bottle - asm](https://pwnable.kr/play.php).
+
+## Conclusion
+
+Well done, you've won.
+
+I'm kidding of course, but at this point I hope that you won't need this page anymore. Now that you know about these core concepts, it is time to practice finding where to apply them, and then doing it.
+
+Okay then, one last link. <https://ctftime.org>.
+
+Love, Bangedaon.
+
+&nbsp;
+
+## Further training
+
+- <https://overthewire.org/wargames/krypton/>
+- <https://microcorruption.com/about>
+- <https://smashthestack.org/wargames.html>
+- <https://ctf.j0n9hyun.xyz/>
+- <https://pwnable.kr>
+- <https://pwnable.xyz>
+- <https://pwnable.tw>
+- <https://exploit.education/>
+
+## Other CTF/binary analysis and exploitation related resources
+
+- <https://cryptopals.com>
+- <https://github.com/sajjadium/CTFium>
+- <https://247ctf.com/>
+- Hackthebox
+- Tryhackme
+- Metasploitable
+- DVWA
+- <https://app.cybrary.it> (Paid)
+- <https://malwareunicorn.org/#/workshops>
+- <https://class.malware.re/>
+- <https://opensecuritytraining.info/Training.html>
+- <https://github.com/wtsxDev/reverse-engineering>
+- <https://maxkersten.nl/binary-analysis-course/>
