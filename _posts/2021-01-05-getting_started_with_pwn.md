@@ -4,9 +4,6 @@ title: A noobs guide to binary exploitation
 categories: Pwn
 ---
 
-Date: 2021-01-05
-"Help, I don't know what I don't know"
-
 ## Introduction
 
 As much as I'd like to make the ultimate guide to binary exploitation, there are people that have done much better than I can hope to achieve. However, one thing I struggled with was finding those resources. More than I realized, even. When I was starting out with CTFs, I did most of the PicoCTF binary exploitation challenges and thought I could do it all. Then I did a proper CTF and got a grand total of 0 points. The amazing fellow players pointed my nose in the right direction, and I'd like to do that for you as well.
