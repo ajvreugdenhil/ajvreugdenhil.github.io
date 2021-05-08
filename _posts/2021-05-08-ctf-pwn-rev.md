@@ -15,7 +15,7 @@ categories: [Reversing, Pwn]
 
 ## GDB
 
-```gdb
+```plaintext
 r < payload.bin
 r < <(script.py)
 info file
@@ -70,7 +70,7 @@ nm ret2win | grep ' t ']
 
 ## Radare
 
-```r2
+```plaintext
 afl     list functions
 iI      info
 ii      imports

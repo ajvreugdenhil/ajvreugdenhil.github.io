@@ -12,7 +12,7 @@ This is a collection of tips and tricks I have discovered in my working for FHIC
 
 <https://github.com/pwning/docs/blob/master/suggestions-for-running-a-ctf.markdown>
 
-## buffer thing
+## Buffers
 
 The "Suggestions for running a ctf" by PPP suggested using either xinetd or fork/accept in the binary itself for running remote challenges. When I joined FHICTF, there was one example pwn challenge, which used socat in docker. Because this seemed to work fine, I have not yet looked into the differences and possible problems with our approach.
 
