@@ -4,7 +4,6 @@ title: Pwntools template
 categories: Pwn
 ---
 
-TODO: load from assets, to wget the whole thing
 
 ```python
 

@@ -5,13 +5,6 @@ categories: Pwn
 ---
 
 
-TODO:
-
--z execstack
-
-these days most challs are 64 bit
-
-<https://www.youtube.com/watch?v=VCwiZ2dh17Q&list=PLhixgUqwRTjzTvVyL_8H-DJBf8VT3uiu2&index=2>
 
 This is a collection of tips and tricks I have discovered in my working for FHICTF.
 
@@ -83,3 +76,11 @@ sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -
 sudo docker cp sad_brattain:/home/user/challenge_name .
 nc 172.17.0.2 8080
 ```
+
+TODO:
+
+-z execstack
+
+these days most challs are 64 bit
+
+<https://www.youtube.com/watch?v=VCwiZ2dh17Q&list=PLhixgUqwRTjzTvVyL_8H-DJBf8VT3uiu2&index=2>

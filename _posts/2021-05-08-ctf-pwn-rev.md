@@ -110,8 +110,6 @@ rest onto stack
 
 Return val is in EAX or RAX
 
-Note: the following tables are not rendered properly by Pico CMS.
-
 |32|||0|
 |---|---|---|---|---|
 | EAX|EAX|EAX|EAX |
