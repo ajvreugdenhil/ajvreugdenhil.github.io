@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Productivity
-categories: Misc
+categories: Productivity
 published: true
 ---
 
