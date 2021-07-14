@@ -2,6 +2,7 @@
 layout: post
 title: The value and fragility of motivation
 categories: Productivity
+published: false
 ---
 
 Motivation has been a big theme in my life. I like to call coffee liquid motivation, but I'm today I'm officially recognizing that this is not at all doing justice to the complicated concept of getting motivated.
