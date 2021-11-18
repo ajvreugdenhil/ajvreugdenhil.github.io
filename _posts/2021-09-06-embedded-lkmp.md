@@ -42,8 +42,6 @@ I've decided that I do not want to work inside the VM. So for the actual work I 
 
 ```bash
 cp -r project-spec/meta-user/recipes-modules/es6peekpoke/files/ /mnt/hgfs/es6git/es6peekpoke/
-
 cp -r /mnt/hgfs/es6git/peekpoke/files/ project-spec/meta-user/recipes-modules/es6peekpoke/
-
 petalinux-build -c es6peekpoke
 ```

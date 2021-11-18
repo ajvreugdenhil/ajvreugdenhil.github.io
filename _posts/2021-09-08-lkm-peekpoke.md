@@ -15,7 +15,7 @@ Because we will be needing to read and write to memory, we'll need to specify th
 
 To process the users input we can easily use sscanf as follows.
 
-```C
+```c
 chars_read = sscanf(buffer, "%c %li %li", &operation, &location, &arg2);
 ```
 
@@ -25,7 +25,7 @@ Of course, we mustn't forget to check the validity of all parameters. If they ar
 
 If we let ourselves be inspired by the lkmpg and use the following snippet, we run into a wall.
 
-```C
+```c
 static DEVICE_ATTR(data, S_IWUGO | S_IRUGO, sysfs_show, sysfs_store);
 ```
 
@@ -35,7 +35,7 @@ This is because the permissions that `S_IWUGO | S_IRUGO` resolve to, are too bro
 
 In the enviroment we created, we don't have the luxury of using iowrite32 and io_p2v(). So we will have to use iomem. The following code allows us to read and write to an address.
 
-```C
+```c
 void __iomem *io_base = ioremap_nocache(location, 4);
 if (operation == 'r')
 {

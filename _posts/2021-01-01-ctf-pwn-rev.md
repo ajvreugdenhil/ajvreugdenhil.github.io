@@ -22,14 +22,14 @@ info file
 info address main
 ```
 
-```gdb
+```plaintext
 define hook-stop    Do this every time you break
 x/32x $sp           examine 32 bytes as hex at the top of stack
 x/16i $pc           examine 16 instructions coming up next
 end
 ```
 
-```gdb
+```plaintext
 /x  hex
 /s  string
 /t  binary
@@ -39,7 +39,7 @@ end
 /d  decimal
 ```
 
-```gdb
+```plaintext
 b *0xdeadbeef
 info registers  ( i r )
 backtrace       ( bt )
