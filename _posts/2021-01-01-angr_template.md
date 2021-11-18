@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Angr template
-categories: Reversing
+categories: [Reversing, Template]
+published: true
 ---
 
 ```python

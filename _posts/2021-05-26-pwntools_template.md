@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Pwntools template
-categories: Pwn
+categories: [Pwn, Template]
+published: true
 ---
 
 

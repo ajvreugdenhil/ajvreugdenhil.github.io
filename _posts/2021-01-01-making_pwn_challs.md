@@ -2,6 +2,7 @@
 layout: post
 title: Making pwn challenges
 categories: Pwn
+published: true
 ---
 
 

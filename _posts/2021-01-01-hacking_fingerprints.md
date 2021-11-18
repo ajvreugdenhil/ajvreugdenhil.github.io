@@ -2,6 +2,7 @@
 layout: post
 title: Hacking fingerprints
 categories: Misc
+published: true
 ---
 
 

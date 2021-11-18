@@ -1,6 +1,6 @@
 ---
 layout: post
-title: General password information
+title: Making strong passwords
 categories: Misc
 published: false
 ---

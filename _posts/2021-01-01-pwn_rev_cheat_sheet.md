@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Cheat sheet pwn/rev challenges
+title: Cheat sheet for pwn/rev challenges
 categories: [Reversing, Pwn]
+published: true
 ---
 
 
@@ -110,29 +111,29 @@ rest onto stack
 
 Return val is in EAX or RAX
 
-|32|||0|
-|---|---|---|---|---|
-| EAX|EAX|EAX|EAX |
-|||AX|AX|
-|||ah|al|
+| 32  |     |     | 0   |
+| --- | --- | --- | --- |  |
+| EAX | EAX | EAX | EAX |
+|     |     | AX  | AX  |
+|     |     | ah  | al  |
 
 ## Stack 32 bit
 
-||||
-|---|---|---|
-|stack growth to here|||
-||||
-|local var 2|ebp - 0xc| <- ESP|
-|local var 1|ebp - 8||
-|local var 0|ebp - 4||
-|saved EBP||
-|saved EIP|ebp + 4||
-|param 0|ebp + 8||
-|param 1|ebp + 0xc||
-|old local var 2|| <- saved EBP|
-||||
-|High address|||
-||||
+|                      |           |              |
+| -------------------- | --------- | ------------ |
+| stack growth to here |           |              |
+|                      |           |              |
+| local var 2          | ebp - 0xc | <- ESP       |
+| local var 1          | ebp - 8   |              |
+| local var 0          | ebp - 4   |              |
+| saved EBP            |           |
+| saved EIP            | ebp + 4   |              |
+| param 0              | ebp + 8   |              |
+| param 1              | ebp + 0xc |              |
+| old local var 2      |           | <- saved EBP |
+|                      |           |              |
+| High address         |           |              |
+|                      |           |              |
 
 ## Tips
 
