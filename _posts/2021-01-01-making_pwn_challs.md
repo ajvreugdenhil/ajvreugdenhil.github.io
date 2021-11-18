@@ -26,7 +26,7 @@ ENTRYPOINT socat TCP-LISTEN:8080,reuseaddr,fork EXEC:"./challenge_format"
 
 The solution I found was to use a setvbuf in main().
 
-```C
+```c
 int main()
 {
     setvbuf(stdout, NULL, _IONBF, 0);
