@@ -44,7 +44,7 @@ For rev challs, consider running `strip $(TARGET)` after GCC.
 
 TODO: explain all relevant flags
 
-```Makefile
+```make
 TARGET=challenge_format
 
 INCLUDEFLAGS=-Isrc -Iinclude -Iinclude/interfaces 
