@@ -5,7 +5,7 @@ categories: Misc
 published: true
 ---
 
-Everyone knows that they should use strong passwords. The chance of getting compromised through a weak or exposed password is small, but the implications for your life could be great. But choosing what is strong passwords might not be intuitive. Sadly, I can't go around asking everyone to tell me their passwords to judge whether they're good or not. So the best I can do is write a guide to avoid common mistakes.
+Everyone knows that they should use strong passwords. The chance of getting compromised through a weak or exposed password is small, but the implications for your (digital) life could be painful. Sadly, picking strong passwords might not be intuitive. And since I can't go around asking everyone around me to tell me their passwords to judge whether they're good or not, the best I can do is write a guide to avoid common mistakes.
 
 The TL;DR here is to use a password manager and use passwords based on fully random data like a die or a trustworthy random number generator.
 
@@ -15,7 +15,7 @@ Attackers have limited resources. That means that they can only crack the weakes
 
 There are two ways passwords are craked. One is cracking with brute force, and the other is by generating potential matches using patterns. This is either done on-the-fly or by making a 'dictionary' in advance.
 
-Brute force attacks are simple. The attacker tries everything from 'a' through 'ZZZZZZZZZZZZ', including all lower and upper case letters, numbers, a limited amound of symbols or whichever combination the attacker things is likely to work.
+Brute force attacks are simple. The attacker tries everything from 'a' through 'ZZZZZZZZZZZZ', including all lower- and uppercase letters, numbers, a limited amount of symbols or whichever combination the attacker thinks is likely to work.
 
 Dictionary attacks are an art. The attacker may try combinations of common names, seasons, years, and limited permutations on all. This may include an uppercase letter as the first character, and an exclamation point as a last character.
 
@@ -30,6 +30,8 @@ Don't use inherently weak passwords. This includes
 Don't capitalize the first letter, or add a punctuation mark in hopes that this significantly increases the strength of your password.
 
 Don't use pen and paper. Your passwords are unlikely to get stolen, and on paper (haha) this is not a bad idea. But this approach increases the barrier to use strong passwords with many unique, random data inside it, but it also makes it more likely that you'll reuse passwords. If you ignore this advice, do not store them along your laptop, on a sticky note under your keyboard, or anywhere untrusted people can access it.
+
+Don't use keyboard walks. These are not random and everyone shares the same keyboard layouts so they are easily guessed.
 
 ## Do's
 
