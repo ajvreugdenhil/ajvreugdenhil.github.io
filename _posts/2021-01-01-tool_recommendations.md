@@ -95,3 +95,9 @@ Then use for example [template](angr_template.md) anywhere
 
 - <http://www.ollydbg.de/>
 - dnspy
+
+- auto save on focus change
+- drawio
+- todo
+- markdown aio
+- markdown lint

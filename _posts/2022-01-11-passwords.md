@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making strong passwords
-categories: Misc
+categories: [Introduction, General security]
 published: true
 ---
 

