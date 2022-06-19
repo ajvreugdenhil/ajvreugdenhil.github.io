@@ -2,7 +2,7 @@
 layout: post
 title: Coming to terms with perfectionism
 categories: Productivity
-published: true
+published: false
 ---
 
 I've had trouble admitting to myself that I'm a perfectionist. That is, until earlier today when I realized "I'd rather have failed and be done with it, than be seen failing." This is highly irrational of course and I would like to get rid of this way of thinking.

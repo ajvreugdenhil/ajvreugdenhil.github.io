@@ -2,7 +2,7 @@
 layout: post
 title: Productivity
 categories: Productivity
-published: true
+published: false
 ---
 
 In the past few months, I've been pretty conscious about my habits and productivity. I've made changes and mistakes. Since learning from other people's mistakes is the second best way to learn, I'd like to share my findings with you all. Many changes have been inspired by Better than Before by Gretchen Rubin. 10/10 would recommend.
