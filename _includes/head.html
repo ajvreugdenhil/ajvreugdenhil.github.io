@@ -50,6 +50,10 @@
     {{ site.title }}
   </title>
 
+  {% include google_verification.html %}
+
+  {% include mastodon_verification.html %}
+
   {% include favicons.html %}
 
   {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}
