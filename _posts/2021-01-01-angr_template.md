@@ -3,6 +3,7 @@ layout: post
 title: Angr template
 categories: [Reversing, Template]
 published: true
+last_modified_at: 2022-06-19 00:00:00 +0000
 ---
 
 ```bash

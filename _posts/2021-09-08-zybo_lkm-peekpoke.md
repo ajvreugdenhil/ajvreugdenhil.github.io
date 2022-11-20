@@ -3,6 +3,7 @@ layout: post
 title: Poking the beast
 categories: LKM
 published: true
+last_modified_at: 2021-10-06 00:00:00 +0000
 ---
 
 This post describes the peek/poke driver for the Zybo Z7-10. A peek/poke driver may be used to write to addresses that can be accessed from kernel space but not from user space. It serves as a good introductory project for making kernel modules.

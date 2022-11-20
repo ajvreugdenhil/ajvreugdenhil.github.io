@@ -2,7 +2,7 @@
 layout: post
 title: 3d printing cheat sheet
 categories: 3d-printing
-published: true
+published: false
 ---
 
 Gcode etc for semi regular adjustments.
