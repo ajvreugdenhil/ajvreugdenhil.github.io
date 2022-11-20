@@ -12,11 +12,11 @@ This post describes my experience with first setting up my enviroment for workin
 
 When originally drafting this post, this paragraph was titled "It's not that scary." And then I spent 4 days debugging the toolchain. But even though many things are different in kernel module land, it's just another little step up from programming for userspace in C.
 
-<!--more-->
-
 ## Getting set up
 
 If you first venture out into embedded linux past Raspberries, you'll quickly run into Buildroot, Yocto and Zephyr. Each with their own strengths. For working with the Zybo board, we didn't have to make a choice. Xilinx provides a [Petalinux](http://www.xilinx.com/petalinux) demo which *should* be easy to set up. (subtle foreshadowing.) With Petalinux, we can simply build an image for the board and build applications and kernel modules.
+
+<!--more-->
 
 To get us going, we make an Ubuntu 16.04.x VM and we install Petalinux and download the bsp. While Xilinx' [demo page](https://digilent.com/reference/programmable-logic/zybo-z7/demos/petalinux?redirect=1) suggests that 2017.4 is not the latest release, the latest release link (`https://github.com/Digilent/(Board)/releases/tag/(tag)`) doesn't go anywhere so we'll stick with 2017.4. Following their [guide on github](https://github.com/Digilent/Petalinux-Zybo-Z7-10/tree/v2017.4-1) we get most of the way there.
 

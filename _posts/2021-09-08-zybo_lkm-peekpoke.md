@@ -9,11 +9,11 @@ excerpt_separator: <!--more-->
 
 This post describes the peek/poke driver for the Zybo Z7-10. A peek/poke driver may be used to write to addresses that can be accessed from kernel space but not from user space. It serves as a good introductory project for making kernel modules.
 
-<!--more-->
-
 ## Talking to our driver
 
 The first thing to worry about for making this driver is how we'll be talking to it. In this case, using sysfs makes more sense over devfs because we'll always be dealing with small bits of data.
+
+<!--more-->
 
 Because we will be needing to read and write to memory, we'll need to specify the operation in the message. For reading memory we'll need to specify an address to read from, and we may also specify how many words to read. For the writing operation, we'll need to specify an address and a value. With our current architecture, these all need to be a `u32`. We will be sending the result of the read operation to the user via printk. This is not acceptable for serious drivers, but it more than suffices for our use case.
 

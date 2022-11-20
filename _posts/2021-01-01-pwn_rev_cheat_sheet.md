@@ -8,8 +8,6 @@ excerpt_separator: <!--more-->
 
 This post is a brief cheat sheet for solving CTF pwn and reversing challenges.
 
-<!--more-->
-
 ## Online Tools
 
 - [https://libc.blukat.me/](https://libc.blukat.me/)
@@ -17,6 +15,8 @@ This post is a brief cheat sheet for solving CTF pwn and reversing challenges.
 - [https://github.com/0xb0bb/karkinos](https://github.com/0xb0bb/karkinos)
 - [https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)
 - [https://docs.pwntools.com/en/stable/intro.html](https://docs.pwntools.com/en/stable/intro.html)
+
+<!--more-->
 
 ## GDB
 

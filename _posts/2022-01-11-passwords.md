@@ -11,11 +11,11 @@ Everyone knows that they should use strong passwords. The chance of getting comp
 
 The TL;DR here is to use a password manager and use passwords based on fully random data like a die or a trustworthy random number generator.
 
-<!--more-->
-
 ## How passwords are cracked
 
 Attackers have limited resources. That means that they can only crack the weakest portion of accounts they want to breach. Generally speaking, and as long as the service implements best practices. These best practices include properly hashing your password. This is done using a one-way equation. The password is checked only by comparing the result of the equation. An attacker would have to try many options before knowing which one matches.
+
+<!--more-->
 
 There are two ways passwords are craked. One is cracking with brute force, and the other is by generating potential matches using patterns. This is either done on-the-fly or by making a 'dictionary' in advance.
 
