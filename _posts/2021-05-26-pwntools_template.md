@@ -5,6 +5,7 @@ categories: [Pwn, Template]
 published: true
 ---
 
+This post contains the last update of my pwntools template. It is used as a starting point for solving CTF pwn challenges.
 
 ```python
 

@@ -3,8 +3,12 @@ layout: post
 title: Angr template
 categories: [Reversing, Template]
 published: true
-last_modified_at: 2022-06-19 00:00:00 +0000
+last_modified_at: 2022-11-20
 ---
+
+This post describes both how to set up an Angr environment for solving CTF reversing challenges as well as a template to use.
+
+## Setting up
 
 ```bash
 sudo apt-get install python3-dev libffi-dev build-essential virtualenvwrapper
@@ -17,9 +21,9 @@ source angr/bin/activate
 python3 -m pip install angr
 ```
 
-```python
-import angr
+## Template
 
+```python
 import angr
 import claripy
 import logging

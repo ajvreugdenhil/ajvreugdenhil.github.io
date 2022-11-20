@@ -5,6 +5,7 @@ categories: [Reversing, Pwn]
 published: true
 ---
 
+This post is a brief cheat sheet for solving CTF pwn and reversing challenges.
 
 ## Online Tools
 

@@ -5,8 +5,6 @@ categories: Pwn
 published: true
 ---
 
-
-
 This is a collection of tips and tricks I have discovered in my working for FHICTF.
 
 ## External sources
