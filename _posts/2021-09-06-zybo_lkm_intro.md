@@ -3,6 +3,7 @@ layout: post
 title: Intro to linux kernel module programming on the Zybo Z7-10
 categories: LKM
 published: true
+excerpt_separator: <!--more-->
 ---
 
 This post describes my experience with first setting up my enviroment for working with the Zybo Z7-10.
@@ -10,6 +11,8 @@ This post describes my experience with first setting up my enviroment for workin
 ## It's only a little scary
 
 When originally drafting this post, this paragraph was titled "It's not that scary." And then I spent 4 days debugging the toolchain. But even though many things are different in kernel module land, it's just another little step up from programming for userspace in C.
+
+<!--more-->
 
 ## Getting set up
 

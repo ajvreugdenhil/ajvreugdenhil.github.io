@@ -3,11 +3,14 @@ layout: post
 title: Hacking fingerprints
 categories: Misc
 published: true
+excerpt_separator: <!--more-->
 ---
 
 One of my favorite tv shows ever is Mr Robot. It is commonly praised for its remarkably realistic hacks. But despite my eternal love for it, and the realism of a lot of the hacks, I had many questions when I did my 4th rewatch of the series. In S4E5, Darlene and Elliot break into Virtual Realty. Through a combination of social engineering, and technical attacks on physical security systems, they get into the server room. Most of this was done in the 40 minutes that their hack on the security cameras allowed them.
 
 A lot of things had to go exactly right, and I felt it was time to either prove or debunk parts of this hack. I'm not the first to analyse this hack. [Vice](https://www.vice.com/en/article/vb58mx/a-roundtable-of-hackers-dissects-mr-robot-season-4-episode-5-method-not-allowed) has analyzed many parts of it. [A thread on Reddit](https://www.reddit.com/r/MrRobot/comments/dy8br6/plausibility_of_the_fingerprint_hack_in_4x05/) showed some doubts about the fingerprint hack. But a similar attack [has been pulled off](https://www.theverge.com/2019/4/7/18299366/samsung-galaxy-s10-fingerprint-sensor-fooled-3d-printed-fingerprint) before.
+
+<!--more-->
 
 My main doubts are as follows.
 

@@ -3,9 +3,12 @@ layout: post
 title: Cheat sheet for pwn/rev challenges
 categories: [Reversing, Pwn]
 published: true
+excerpt_separator: <!--more-->
 ---
 
 This post is a brief cheat sheet for solving CTF pwn and reversing challenges.
+
+<!--more-->
 
 ## Online Tools
 

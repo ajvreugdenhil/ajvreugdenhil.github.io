@@ -4,11 +4,14 @@ title: Making strong passwords
 categories: [Introduction, General security]
 published: true
 last_modified_at: 2022-01-29
+excerpt_separator: <!--more-->
 ---
 
 Everyone knows that they should use strong passwords. The chance of getting compromised through a weak or exposed password is small, but the implications for your (digital) life could be painful. Sadly, picking strong passwords might not be intuitive. And since I can't go around asking everyone around me to tell me their passwords to judge whether they're good or not, the best I can do is write a guide to avoid common mistakes.
 
 The TL;DR here is to use a password manager and use passwords based on fully random data like a die or a trustworthy random number generator.
+
+<!--more-->
 
 ## How passwords are cracked
 

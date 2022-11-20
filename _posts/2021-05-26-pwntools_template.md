@@ -3,9 +3,12 @@ layout: post
 title: Pwntools template
 categories: [Pwn, Template]
 published: true
+excerpt_separator: <!--more-->
 ---
 
 This post contains the last update of my pwntools template. It is used as a starting point for solving CTF pwn challenges.
+
+<!--more-->
 
 ```python
 

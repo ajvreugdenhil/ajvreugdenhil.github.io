@@ -4,9 +4,12 @@ title: Angr template
 categories: [Reversing, Template]
 published: true
 last_modified_at: 2022-11-20
+excerpt_separator: <!--more-->
 ---
 
 This post describes both how to set up an Angr environment for solving CTF reversing challenges as well as a template to use.
+
+<!--more-->
 
 ## Setting up
 

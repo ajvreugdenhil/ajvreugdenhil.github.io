@@ -3,6 +3,7 @@ layout: post
 title: Making pwn challenges
 categories: Pwn
 published: true
+excerpt_separator: <!--more-->
 ---
 
 This is a collection of tips and tricks I have discovered in my working for FHICTF.
@@ -18,6 +19,8 @@ The "Suggestions for running a ctf" by PPP suggested using either xinetd or fork
 One issue we have had was that when doing the challenge, netcat would not receive any data until the connection closed. Then it would suddenly flood the terminal.
 
 This is what we used in the dockerfile:
+
+<!--more-->
 
 ```Dockerfile
 ENTRYPOINT socat TCP-LISTEN:8080,reuseaddr,fork EXEC:"./challenge_format"
