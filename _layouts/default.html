@@ -4,8 +4,6 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     {% seo title=false %}
     {% include meta.html %}
-    {% include google_verification.html %}
-    {% include mastodon_verification.html %}
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
