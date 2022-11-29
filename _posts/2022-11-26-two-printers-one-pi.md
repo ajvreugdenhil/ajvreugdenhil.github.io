@@ -15,6 +15,8 @@ For this project I decided it was best to go with a fresh Raspberry OS install i
 
 After boot, I SSH'ed in and ran the following commands:
 
+<!--more-->
+
 ```bash
 sudo apt update
 sudo apt upgrade
