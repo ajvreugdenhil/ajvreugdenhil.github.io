@@ -3,7 +3,7 @@ layout: post
 title: Dual printering Klipper
 categories: Misc
 published: true
-last_modified_at: 2022-11-29
+last_modified_at: 2022-12-06
 excerpt_separator: <!--more-->
 ---
 
@@ -25,9 +25,9 @@ git clone https://github.com/th33xitus/kiauh.git
 ./kiauh/kiauh.sh
 ```
 
-Using Kiauh, I installed Klipper first. The tools lets you easily create 2 instances instead of 1. I named both. When asked if the tool should add the user to the tty group, I selected yes.
+Using Kiauh, I installed Klipper first. The tool lets you easily create 2 instances instead of 1. I named both. When asked if the tool should add the user to the tty group, I selected yes.
 
-Then installing Moonraker was simple as the default settings were fine. The same went for Fluidd.
+Then installing Moonraker was simple. The default settings were fine. The same went for Fluidd.
 
 ## Basic setup
 
@@ -41,20 +41,20 @@ Now in Fluidd, we can simply make the following adjustments:
 [authorization]
 +force_logins: True
 -trusted_clients:
--	10.0.0.0/8
--	127.0.0.0/8
--	169.254.0.0/16
--	172.16.0.0/12
--	192.168.0.0/16
--	FE80::/10
--	::1/128
+-   10.0.0.0/8
+-   127.0.0.0/8
+-   169.254.0.0/16
+-   172.16.0.0/12
+-   192.168.0.0/16
+-   FE80::/10
+-   ::1/128
 ```
 
-Then find the meatball menu and add an instance. I added printer.local:7126. Go through the exact same three steps as above.
+Then find the meatball menu and add an instance. I added <http://printer.local:7126> (`printer` is the hostname I set in the Raspberry imager. mDNS lets me approach this system with `http://printer.local`). Go through the exact same three steps as above.
 
 Then reboot the Pi.
 
-Finally, for both Pi's, update the printer.cfg and fluidd.cfg. You may need to edit moonraker.conf as well. Do not overwrite the Moonraker port with old settings.
+Finally, for both printers, update the printer.cfg and fluidd.cfg. You may need to edit moonraker.conf as well. Do not accidentally overwrite the Moonraker port with old settings. The following two changes must also be applied to the old config. Note that `anet` is the name I gave to one of my printers. Subsitute it with your own.
 
 ### printer.cfg
 
