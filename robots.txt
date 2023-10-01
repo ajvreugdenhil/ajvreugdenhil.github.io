@@ -1,4 +1,7 @@
+# fuck them freeloading AI corps
+
 User-agent: Google-Extended
 Disallow: /
+
 User-agent: GPTBot
 Disallow: /
